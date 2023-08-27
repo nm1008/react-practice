@@ -2,12 +2,58 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 
+const skills = [
+    {
+        skill: "HTML + CSS",
+        level: "intermediate",
+        color: "#2662EA"
+
+    },
+    {
+        skill: "React",
+        level: "beginner",
+        color: "#60DAFB"
+    },
+    {
+        skill: "Bootstrap",
+        level: "intermediate",
+        color: "##EE84F33"
+    },
+    {
+        skill: "Git and GitHub",
+        level: "intermediate",
+        color: "#C3DCAF"
+    },
+    {
+        skill: "Javascript",
+        level: "intermediate",
+        color: "#EFD81D"
+    },
+    {
+        skill: "Next JS",
+        level: "beginner",
+        color: "brown"
+    },
+    {
+        skill: "Node JS",
+        level: "beginner",
+        color: "green"
+    },
+    {
+        skill: "Tailwind",
+        level: "intermediate",
+        color: "pink"
+    }
+]
+
 function App() {
   return (
     <div className="card">
-      <Avatar />
-      <Intro />
-      <SkillList />
+        <div className="data">
+            <Avatar />
+            <Intro />
+            <SkillList />
+        </div>
     </div>
   );
 
@@ -18,19 +64,19 @@ function App() {
       </div>
     );
   }
-  
+
   function Intro() {
     return (
-        <div className="data">
-            <h2>Nikko Mallari</h2>
-            <h3>
-                Hey there! I'm an aspiring software engineer, a culinary arts
-                graduate, and a tech enthusiast. With a background in creating flavors
-                and experiences through food, I'm now immersed in the world of coding
-                and web development.
-            </h3>
-        </div>
-    )
+      <div>
+        <h2>Nikko Mallari</h2>
+        <h3>
+          Hey there! I'm an aspiring software engineer, a culinary arts
+          graduate, and a tech enthusiast. With a background in creating flavors
+          and experiences through food, I'm now immersed in the world of coding
+          and web development.
+        </h3>
+      </div>
+    );
   }
 
   function SkillList() {
@@ -57,8 +103,6 @@ function App() {
       </div>
     );
   }
-
-
 }
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
