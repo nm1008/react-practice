@@ -87,7 +87,9 @@ function App() {
        {skills.map((skill) => (
 
         //added key for each obj it is a unique value - you can use the name of the obj
-        <Skill skillObj={skill} key={skill.name} />
+        // <Skill skillObj={skill} key={skill.name} />
+
+        <Skill name={skill.name} color={skill.color} level={skill.level}/>
 
        ))}
 
@@ -102,26 +104,39 @@ function App() {
     );
   }
 
-  function Skill(props) {
-    console.log(props.skillObj.emoji);
+  
+  function Skill({ name, color, level }) { //you can also use "props as the argument
+    // console.log(props.skillObj.emoji);
+    //conditional render for each level
+    // let emoji;
 
-    let emoji;
-
-    if(props.skillObj.level === "beginner"){
-        emoji = <span>👶</span>
-    }else if(props.skillObj.level === "intermediate"){
-        emoji = <span>🔥</span>
-    }else if(props.skillObj.level === "advanced") {
-        emoji = <span>💪</span>
-    }
+    // if(props.skillObj.level === "beginner"){
+    //     emoji = <span>👶</span>
+    // }else if(props.skillObj.level === "intermediate"){
+    //     emoji = <span>💪</span>
+    // }else if(props.skillObj.level === "advanced") {
+    //     emoji = <span>🔥</span>
+    // }
 
     return (
-      <div className="skill">
-        <div className="skill" style={{ backgroundColor: props.skillObj.color }}>
-          <span>{props.skillObj.name}</span>
-            {emoji}
-        </div>
-      </div>
+    //   <div className="skill">
+    //     <div className="skill" style={{ backgroundColor: props.skillObj.color }}>
+    //       <span>{props.skillObj.name}</span>
+    //         {emoji}
+    //     </div>
+    //   </div>
+
+    // another way of conditional rendering using && method
+        <div className="skill">
+            <div className="skill" style={{ backgroundColor: color }}>
+                <span>{name}</span>
+                 <span>
+                    {level === "beginner" && "👶"}
+                    {level === "intermediate" && "💪"}
+                    {level === "advance" && "🔥"}
+                </span>
+            </div>
+       </div>
     );
   }
 }
